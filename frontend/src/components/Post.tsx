@@ -7,12 +7,8 @@ import { PostCard } from './PostCard';
 
 export const Post = () => {
   const {id} = useParams();
-  //const {posts} = useContext(PostsContext);
   const [data, setData, isLoading, error] = useApi(import.meta.env.VITE_API_URL+'/posts/'+id, []);
   const [isEdit, setEdit] = useState(false);
-  //const [postNew, setPostNew] = useState(post);
-  
-  //const [post, setPost] = useState<IPost>(initialData);
   const navigate = useNavigate();
 
   const handlerChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -24,23 +20,6 @@ export const Post = () => {
     };
     setData(p);
   }
-
-  //useEffect(() => {
-    //console.log('useEffect() id=', id);
-    //const data = posts.filter((post) => post.id == (id ? parseInt(id) : 0));
-    //console.log('post', JSON.stringify(post));
-    /*let initialData: IPost;
-    if (data.length > 0) {
-      initialData = {
-        id: data[0].id,
-        content: data[0].content
-      };
-      //console.log('initialData', initialData);
-      
-      setPost(initialData);
-    }*/
-    //setPostNew(post);
-  //}, [post]); //[id, posts]
 
   const handlerSaveClick = () => {
     const {id, content} = data;
@@ -65,7 +44,6 @@ export const Post = () => {
 
   return (
     <>
-      {/* <div>id: {JSON.stringify(post)} params.id: {id}</div> */}
       {isLoading && <div>Loading...</div>}
       {error && <div>Error!</div>}
       {!isEdit && !isLoading &&

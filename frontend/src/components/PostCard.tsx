@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
 interface PropsType {
-  //content: string, 
   created?: number | undefined,
   close: boolean,
   children?: React.ReactNode

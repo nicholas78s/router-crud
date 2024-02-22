@@ -1,11 +1,8 @@
-import { Dispatch, SetStateAction, createContext } from "react"
+import { createContext } from "react"
 import { IPost } from "../models";
 
 interface IContext {
-  posts: IPost[], // | Dispatch<SetStateAction<IPost[]>>,
-  //setPosts: React.Dispatch<React.SetStateAction<IPost[]>>
-  //setPosts: Dispatch<SetStateAction<IPost[]>>
-  //setPosts: () => void
+  posts: IPost[], 
   setPosts: React.Dispatch<React.SetStateAction<IPost[]>>
 }
 

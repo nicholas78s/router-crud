@@ -1,8 +1,3 @@
-// interface ApiDataType {
-//   id: number,
-//   content: string
-// }
-
 import { IPost } from "./models";
 
 type CallBackType = (jsonData?: IPost[]) => void;
@@ -14,11 +9,6 @@ interface FetchParamsType {
 }
 
 export const fetchData = (method: string, url: string, jsonData?: IPost, callback?: CallBackType) => {
-  // let jsonData = {
-  //   id: 0,
-  //   content: data
-  // };
-
   let params: FetchParamsType = {
     method: method,
     headers: {
@@ -28,7 +18,7 @@ export const fetchData = (method: string, url: string, jsonData?: IPost, callbac
 
   if (method === 'POST' || method === 'PUT') {
     params.body = jsonData ? JSON.stringify(jsonData) : '';
-console.log('fetchData():', JSON.stringify(params));
+
     fetch(url, params)
       .catch(() => {
         console.log('err:');
@@ -44,7 +34,7 @@ console.log('fetchData():', JSON.stringify(params));
           callback(json);
       })
       .catch(() => {
-        console.log('err:');
+        console.log('error');
       })
   } else if (method === 'DELETE') {
     params.body = jsonData ? JSON.stringify(jsonData) : '';
@@ -55,7 +45,7 @@ console.log('fetchData():', JSON.stringify(params));
         callback([]);
     })
     .catch(() => {
-      console.log('err:');
+      console.log('error');
     })
   }  
 }

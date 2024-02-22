@@ -4,15 +4,7 @@ import useApi from '../hooks/useApi';
 import { PostCard } from './PostCard';
 
 export const Posts = () => {
-  // const [posts, setPosts] = useState<IPost[]>([]);
-
-  // useEffect(() => {
-  //   fetch(import.meta.env.VITE_API_URL+'/posts')
-  //     .then((response) => response.json())
-  //     .then((posts) => setPosts(posts));
-  // }, []);
   const [data, _setData, isLoading, error] = useApi(import.meta.env.VITE_API_URL+'/posts', []);
-  //const {posts} = useContext(PostsContext);
  
   return (
     <>
@@ -24,13 +16,13 @@ export const Posts = () => {
       {data
         .sort((a: IPost, b: IPost) => (b.created ? b.created : 0) - (a.created ? a.created : 0))
         .map((post: IPost) => (
-        // <PostItem key={post.id} id={post.id} content={post.content} created={post.created} />
-        <Link to={`/posts/${post.id}`} key={post.id}>
-          <PostCard created={post.created} close={false} >
-            <div className="content">{post.content}</div>
-          </PostCard>
-        </Link>
-      ))}
+          <Link to={`/posts/${post.id}`} key={post.id}>
+            <PostCard created={post.created} close={false} >
+              <div className="content">{post.content}</div>
+            </PostCard>
+          </Link>
+        ))
+      }
     </>
   )
 }

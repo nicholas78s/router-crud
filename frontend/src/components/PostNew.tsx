@@ -34,7 +34,7 @@ export const PostNew = () => {
         <textarea value={post} onChange={(e) => handlerChange(e)}/>
       </div>
       <div className="buttons">
-        <button type="button" className="posts-button" onClick={handlerClick}>Опубликовать</button>
+        <button type="button" className="post-button" onClick={handlerClick}>Опубликовать</button>
       </div>
     </PostCard>
   )

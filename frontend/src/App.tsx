@@ -7,23 +7,17 @@ import { Post } from './components/Post'
 import { PageNotFound } from './components/PageNotFound'
 
 function App() {
-  //const [posts, setPosts] = useState<IPost[]>([]);
-  //const [posts, setPosts] = useApi(import.meta.env.VITE_API_URL+'/posts', []);
-
   return (
     <Router>
       <div>
         <Menu />
         <div className="page">
-          {/* <PostsContext.Provider value={{posts, setPosts}}> */}
-            <Routes>
-              <Route path="*" element={<PageNotFound />} />
-              <Route path="/" element={<Posts />} />
-              <Route path="/posts/new" element={<PostNew />} />
-              <Route path="/posts/:id" element={<Post />} />
-              {/* <Route path="*" element={<PageNotFound />} /> */}
-            </Routes>
-          {/* </PostsContext.Provider> */}
+          <Routes>
+            <Route path="*" element={<PageNotFound />} />
+            <Route path="/" element={<Posts />} />
+            <Route path="/posts/new" element={<PostNew />} />
+            <Route path="/posts/:id" element={<Post />} />
+          </Routes>
         </div>
       </div>
     </Router>

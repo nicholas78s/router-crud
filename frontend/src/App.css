@@ -46,10 +46,10 @@
   justify-content: end;
 }
 .post-card .close {
-  /*position: absolute;
-  right: 4px;
-  top: -2px; */
   cursor: pointer;
+}
+.post-card .close:hover {
+  color: red;
 }
 .close-container {
   display: flex;
