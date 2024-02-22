@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.post-button {
+  background-color: steelblue;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+.post-button.delete {
+  background-color: indianred;
+  margin-left: 6px;
+}
+.post-button:hover {
+  color: white;
+}
+.post-card {
+  padding: 10px 10px;
+  margin: 10px 10px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  position: relative;
+  min-width: 320px;
+}
+.post-card .created {
+  font-size: 10pt;
+  font-weight: 400;
+}
+.post-card .user-name {
+  font-size: 10pt;
+  font-weight: 600;
+  color: cornflowerblue;
+}
+.post-card.new {
+  display: flex;
+  justify-content: end;
+}
+.post-card .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.post-card .close {
+  /*position: absolute;
+  right: 4px;
+  top: -2px; */
+  cursor: pointer;
+}
+.close-container {
+  display: flex;
+  justify-content: end;
+}
+.post-card textarea {
+  background-color: white;
+  color: black;
+  min-width: 300px;
+  min-height: 50px;
+}
+.post-card .content {
+  white-space: pre-wrap;
+  text-align: left;
+}
